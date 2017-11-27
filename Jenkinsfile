@@ -22,5 +22,8 @@ pipeline {
                 sh 'npm test'
             }
         }
+        stage('Citiustech') {
+            steps {
+                echo 'BIC Testing.....'
     }
 }
