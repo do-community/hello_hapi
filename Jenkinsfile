@@ -25,5 +25,7 @@ pipeline {
         stage('Citiustech') {
             steps {
                 echo 'BIC Testing.....'
+            }
+        }   
     }
 }
