@@ -5,3 +5,8 @@ pipeline:
   test:
     image: node:latest
     commands: npm run test
+
+steps:
+- name:
+    commands:
+      - echo "Hello World"
