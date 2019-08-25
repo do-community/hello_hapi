@@ -1,7 +1,6 @@
 'use strict';
 const Hapi   = require('hapi');
 const Server = new Hapi.Server();
-const Hello  = require('./lib/hello');
 
 Server.connection({ port: 3000 });
 
@@ -10,7 +9,7 @@ Server.route({
     path: '/hello/{user}',
     handler: function (request, reply) {
 
-        const result = Hello(decodeURIComponent(request.params.user));
+        const result = 'test123';
         reply(result);
     }
 });
@@ -24,7 +23,6 @@ if (!module.parent) {
         if (err) {
             throw err;
         }
-        console.log(`Server running at: ${Server.info.uri}`);
     });
 }
 

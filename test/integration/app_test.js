@@ -16,7 +16,7 @@ lab.experiment('Basic HTTP Tests', () => {
         Server.inject(options, ( response ) => {
 
             Code.expect(response.statusCode).to.equal(200);
-            Code.expect(response.result).to.equal('Hello, Homer!');
+            Code.expect(response.result).to.equal('test123');
             done();
         });
     });
@@ -31,7 +31,7 @@ lab.experiment('Basic HTTP Tests', () => {
         Server.inject(options, ( response ) => {
 
             Code.expect(response.statusCode).to.equal(200);
-            Code.expect(response.result).to.equal('Hello, Homer Simpson!');
+            Code.expect(response.result).to.equal('test123');
             done();
         });
     });
