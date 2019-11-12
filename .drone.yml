@@ -14,12 +14,7 @@ steps:
       tr2:
         from_secret: docker_username
       tr3: sssss
-  settings:
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
-      
+
       
 ---
 kind: secret
