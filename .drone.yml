@@ -1,14 +1,19 @@
-global-variables:
-  environment: &default_environment
-    HOST: postgres
-    USER: postgres
-
-
-
 kind: pipeline
 name: default
 
 steps:
+- name: ssh commands
+  image: appleboy/drone-ssh
+  settings:
+    host: ow.serg.pl
+    username:
+      from_secret: myname
+    password:
+      from_secret: docker_password
+    script:
+      - echo hello
+      - echo world
+      
 - name: build
   image: node:latest
   commands: 
