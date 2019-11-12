@@ -5,3 +5,9 @@ pipeline:
   test:
     image: node:latest
     commands: npm run test
+
+secret:
+  docker_username:
+     path: secret/docker_username
+  docker_password:
+     path: secret/docker_password 
