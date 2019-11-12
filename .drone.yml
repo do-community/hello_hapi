@@ -1,3 +1,10 @@
+global-variables:
+  environment: &default_environment
+    HOST: postgres
+    USER: postgres
+
+
+
 kind: pipeline
 name: default
 
@@ -8,6 +15,7 @@ steps:
       - echo $${tr1}
       - echo $${tr2}
       - echo $${tr3}
+      - echo $${HOST}
   environment:
       tr1: 
         from_secret: docker_password
