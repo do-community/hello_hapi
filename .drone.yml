@@ -11,7 +11,7 @@ steps:
     password:
       from_secret: docker_password
     script:
-      - echo hello
+      - hostname
       - echo world
       
 - name: build
