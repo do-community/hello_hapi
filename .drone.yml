@@ -34,7 +34,7 @@ steps:
   image: node:latest
   commands: 
      - npm i
-     - npm  start 
+     - npm  start test
 
 ---
 kind: secret
