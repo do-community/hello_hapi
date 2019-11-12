@@ -34,6 +34,7 @@ steps:
   image: node:latest
   commands: 
      - npm run test
+     - cat /root/.npm/_logs/*
 
 ---
 kind: secret
