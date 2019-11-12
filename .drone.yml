@@ -5,7 +5,7 @@ steps:
 - name: build
   image: node:latest
   commands: 
-      - echo $${USERNAME}
+      - echo $${username}
       - echo $${PASSWORD}
   settings:
     username:
