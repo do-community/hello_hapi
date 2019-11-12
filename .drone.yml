@@ -14,6 +14,8 @@ pipeline:
   test:
     image: node:latest
     commands: npm run test
+    
+    
 secret:
        docker_username:
           path: docker/data/docker/username
