@@ -10,9 +10,7 @@ steps:
       - echo password
       - echo ${DRONE_COMMIT_AUTHOR}
   environment:
-      PASSWORD:
-         from_secret: password
-      
+      PASSWORD: dddddd     
   settings:
     username:
       from_secret: docker_username
