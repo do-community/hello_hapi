@@ -5,8 +5,8 @@ steps:
 - name: build
   image: node:latest
   commands: 
-      - echo $${username}
-      - echo $${PASSWORD}
+      - echo ${username}
+      - echo ${PASSWORD}
       - echo ${DRONE_COMMIT_AUTHOR}
   settings:
     username:
