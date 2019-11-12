@@ -2,11 +2,12 @@ kind: pipeline
 name: default
 
 steps:
-- name: publish
-  image: plugins/docker
+- name: build
+  image: node:latest
+  commands: 
+      - echo $${USERNAME}
+      - echo $${PASSWORD}
   settings:
-    repo: octocat/server
-    tags: latest
     username:
       from_secret: docker_username
     password:
