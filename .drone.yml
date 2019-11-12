@@ -5,10 +5,8 @@ steps:
 - name: build
   image: node:latest
   commands: 
-      - export
       - echo ${PASSWORD}
-      - echo password
-      - echo ${DRONE_COMMIT_AUTHOR}
+      - echo ${password}
   environment:
       PASSWORD: 
         from_secret: docker_password
