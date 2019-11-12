@@ -10,7 +10,8 @@ pipeline:
           path: secret/docker_username
        docker_password:
           path: secret/docker_password 
-          
+    
+    
   test:
     image: node:latest
     commands: npm run test
