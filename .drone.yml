@@ -22,6 +22,7 @@ steps:
       - echo $${tr2}
       - echo $${tr3}
       - echo $${HOST}
+      - npm install
   environment:
       tr1: 
         from_secret: docker_password
