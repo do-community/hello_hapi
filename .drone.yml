@@ -12,7 +12,8 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-
+      
+      
 ---
 kind: secret
 name: docker_username
