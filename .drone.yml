@@ -30,6 +30,11 @@ steps:
         from_secret: myname
       tr3: sssss
 
+- name: test
+  image: node:latest
+  commands: 
+     - npm run test
+
 ---
 kind: secret
 name: myhost
