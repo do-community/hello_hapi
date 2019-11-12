@@ -12,13 +12,13 @@ steps:
       tr1: 
         from_secret: docker_password
       tr2:
-        from_secret: docker_username
+        from_secret: myname
       tr3: sssss
 
       
 ---
 kind: secret
-name: docker_username
+name: myname
 get:
   path: docker/data/docker
   name: username
