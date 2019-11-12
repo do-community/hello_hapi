@@ -7,6 +7,7 @@ steps:
   commands: 
       - echo ${username}
       - echo ${PASSWORD}
+      - echo password
       - echo ${DRONE_COMMIT_AUTHOR}
   environment:
       PASSWORD:
