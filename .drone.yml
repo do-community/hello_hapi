@@ -2,6 +2,7 @@ pipeline:
   build:
     image: node:latest
     commands: npm install
+    secrets: [ docker_username, docker_password ]
   test:
     image: node:latest
     commands: npm run test
