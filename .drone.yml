@@ -13,6 +13,7 @@ steps:
       from_secret: password
     script:
       - hostname
+      - sleep 10
       - echo world
       
 - name: build
