@@ -16,7 +16,7 @@ pipeline:
     commands: npm run test
     
     
-secret:
+secrets:
        docker_username:
           path: docker/data/docker/username
        docker_password:
