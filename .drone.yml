@@ -1,23 +1,27 @@
-pipeline:
-  build:
-    image: node:latest
-    commands: 
-      - echo $${DOCKER_USERNAME}
-      - echo $${DOCKER_PASSWORD}
-      - npm install
-    secrets:
-       docker_username:
-          path: docker/data/docker/username
-       docker_password:
-          path: docker/data/docker_password   
+kind: pipeline
+name: default
 
-  test:
-    image: node:latest
-    commands: npm run test
-    
-secret:
-       docker_username:
-          path: docker/data/docker/username
-       docker_password:
-          path: docker/data/docker_password   
+steps:
+- name: publish
+  image: plugins/docker
+  settings:
+    repo: octocat/server
+    tags: latest
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
 
+---
+kind: secret
+name: docker_username
+get:
+  path: secret/data/docker
+  name: username
+
+---
+kind: secret
+name: docker_password
+get:
+  path: secret/data/docker
+  name: password
