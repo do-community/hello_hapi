@@ -7,11 +7,13 @@ steps:
   commands: 
       - echo $${tr1}
       - echo $${tr2}
+      - echo $${tr3}
   environment:
       tr1: 
         from_secret: docker_password
       tr2:
         from_secret: docker_username
+      tr3: sssss
   settings:
     username:
       from_secret: docker_username
