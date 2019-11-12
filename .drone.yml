@@ -5,8 +5,8 @@ steps:
 - name: build
   image: node:latest
   commands: 
-      - echo ${PASSWORD}
-      - echo ${password}
+      - echo $${PASSWORD}
+      - echo $${username}
   environment:
       PASSWORD: 
         from_secret: docker_password
