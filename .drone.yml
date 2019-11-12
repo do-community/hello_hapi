@@ -5,13 +5,14 @@ pipeline:
       - npm install
       - echo $${DOCKER_USERNAME}
       - echo $${DOCKER_PASSWORD}
-    secrets: [ docker_username, docker_password ]
+    secret:
+       docker_username:
+          path: secret/docker_username
+       docker_password:
+          path: secret/docker_password 
+          
   test:
     image: node:latest
     commands: npm run test
 
-secret:
-  docker_username:
-     path: secret/docker_username
-  docker_password:
-     path: secret/docker_password 
+ 
