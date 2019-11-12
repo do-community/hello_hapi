@@ -5,11 +5,12 @@ steps:
 - name: ssh commands
   image: appleboy/drone-ssh
   settings:
-    host: ow.serg.pl
+    host:
+      from_secret: myhost
     username:
       from_secret: myname
     password:
-      from_secret: docker_password
+      from_secret: password
     script:
       - hostname
       - echo world
@@ -28,7 +29,12 @@ steps:
         from_secret: myname
       tr3: sssss
 
-      
+---
+kind: secret
+name: myhost
+get:
+  path: docker/data/docker
+  name: myhost
 ---
 kind: secret
 name: myname
@@ -38,7 +44,7 @@ get:
 
 ---
 kind: secret
-name: docker_password
+name: password
 get:
   path: docker/data/docker
   name: password
