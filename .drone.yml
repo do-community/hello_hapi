@@ -9,8 +9,7 @@ pipeline:
        docker_username:
           path: docker/data/docker_username
        docker_password:
-          path: docker/data/docker_password 
-    
+          path: docker/data/docker_password   
     
   test:
     image: node:latest
