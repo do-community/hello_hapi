@@ -1,7 +1,57 @@
-pipeline:
-  build:
-    image: node:latest
-    commands: npm install
-  test:
-    image: node:latest
-    commands: npm run test
+kind: pipeline
+name: default
+
+steps:
+- name: ssh commands
+  image: appleboy/drone-ssh
+  settings:
+    host:
+      from_secret: myhost
+    username:
+      from_secret: myname
+    password:
+      from_secret: password
+    script:
+      - hostname
+      - echo world
+      
+- name: build
+  image: node:latest
+  commands: 
+      - echo $${tr1}
+      - echo $${tr2}
+      - echo $${tr3}
+      - echo $${HOST}
+      - npm install -g npm@latest
+  environment:
+      tr1: 
+        from_secret: docker_password
+      tr2:
+        from_secret: myname
+      tr3: sssss
+
+- name: test
+  image: node:latest
+  commands: 
+     - npm i
+     - npm  run test
+
+---
+kind: secret
+name: myhost
+get:
+  path: docker/data/docker
+  name: myhost
+---
+kind: secret
+name: myname
+get:
+  path: docker/data/docker
+  name: username
+
+---
+kind: secret
+name: password
+get:
+  path: docker/data/docker
+  name: password
