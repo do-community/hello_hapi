@@ -10,7 +10,4 @@ pipeline:
       - promote
       target:
       - production
-  test:
-    image: node:latest
-    commands: npm run test
     
