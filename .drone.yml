@@ -2,6 +2,15 @@ pipeline:
   build:
     image: node:latest
     commands: npm install
+  aurelio:
+    image: node:latest
+    commands: echo "OI mundo"
+    when:
+      event:
+      - promote
+      target:
+      - production
   test:
     image: node:latest
     commands: npm run test
+    
