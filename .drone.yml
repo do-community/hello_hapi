@@ -1,24 +1,30 @@
-pipeline:
-  build:
-    image: node:latest
-    commands: npm install
-  production:
-    image: node:latest
-    commands: echo "OI prod"
-    when:
-      branch:
-      - production
-      event:
-      - promote
-      target:
-      - production
-  staging:
-    image: node:latest
-    commands: echo "OI staging"
-    when:
-      event:
-      - promote
-      target:
-      - staging    
+---
+kind: pipeline
+type: test
+name: test
+
+steps:
+   - name: tests
+     image: node:latest
+     commands: npm install
+   
+   - name: say_hi
+     commands: echo oi
+---
+kind: pipeline
+type: deployment
+name: deploy
+
+steps:
+    - name: say_hi
+      commands: echo "DEPLOY TO PRODUCTION"
+
+trigger:
+    event:
+    - promote
+    targe:
+    - production
+---
+
  
 
