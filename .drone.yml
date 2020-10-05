@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-type: test
+type: docker
 name: test
 
 steps:
@@ -15,7 +15,7 @@ trigger:
 
 ---
 kind: pipeline
-type: deployment
+type: docker
 name: production
 
 steps:
