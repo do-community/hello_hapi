@@ -12,6 +12,11 @@ steps:
    - name: say_hi
      commands: 
      - echo oi
+trigger:
+    event:
+    - push
+    - pull_request
+
 ---
 kind: pipeline
 type: deployment
