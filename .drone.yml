@@ -27,6 +27,7 @@ trigger:
     - promote
   branches:
     - production
-
+  target:
+    - production
  
 
