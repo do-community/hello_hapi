@@ -2,12 +2,20 @@ pipeline:
   build:
     image: node:latest
     commands: npm install
-  aurelio:
+  production:
     image: node:latest
-    commands: echo "OI mundo"
+    commands: echo "OI prod"
     when:
       event:
       - promote
       target:
       - production
-    
+  staging:
+    image: node:latest
+    commands: echo "OI staging"
+    when:
+      event:
+      - promote
+      target:
+      - staging    
+ 
