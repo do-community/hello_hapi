@@ -5,6 +5,7 @@ name: test
 
 steps:
   - name: say_hi
+    image: alpine
     commands: 
       - echo oi
 trigger:
@@ -19,6 +20,7 @@ name: production
 
 steps:
   - name: say_hi
+    image: alpine
     commands:
       - echo "DEPLOY TO PRODUCTION"
 
