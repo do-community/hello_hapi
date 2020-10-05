@@ -4,11 +4,11 @@ type: test
 name: test
 
 steps:
-   - name: say_hi
-     commands: 
-     - echo oi
+  - name: say_hi
+    commands: 
+      - echo oi
 trigger:
-    event:
+  event:
     - push
     - pull_request
 
@@ -18,14 +18,14 @@ type: deployment
 name: production
 
 steps:
-    - name: say_hi
-      commands:
+  - name: say_hi
+    commands:
       - echo "DEPLOY TO PRODUCTION"
 
 trigger:
-    event:
+  event:
     - promote
-    branches:
+  branches:
     - production
 
  
