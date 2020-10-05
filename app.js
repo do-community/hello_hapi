@@ -9,7 +9,7 @@ Server.route({
     method: 'GET',
     path: '/hello/{user}',
     handler: function (request, reply) {
-	console.log("OI");
+	console.log("new");
         const result = Hello(decodeURIComponent(request.params.user));
         reply(result);
     }
