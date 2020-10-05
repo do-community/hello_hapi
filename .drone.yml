@@ -25,7 +25,7 @@ steps:
 trigger:
     event:
     - promote
-    targe:
+    target:
     - production
 
  
