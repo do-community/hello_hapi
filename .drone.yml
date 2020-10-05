@@ -33,5 +33,24 @@ trigger:
     - production
   target:
     - production
- 
+---
+kind: pipeline
+type: docker
+name: stagin
+
+steps:
+  - name: sending_to_stage
+    image: alpine
+    commands:
+      - echo "DEPLOY TO stage"
+
+trigger:
+  event:
+    - promote
+    - push
+    - pull_request
+  branches:
+    - stage
+  target:
+    - stage
 
