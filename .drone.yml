@@ -6,10 +6,12 @@ name: test
 steps:
    - name: tests
      image: node:latest
-     commands: npm install
+     commands: 
+     - npm install
    
    - name: say_hi
-     commands: echo oi
+     commands: 
+     - echo oi
 ---
 kind: pipeline
 type: deployment
@@ -17,7 +19,8 @@ name: deploy
 
 steps:
     - name: say_hi
-      commands: echo "DEPLOY TO PRODUCTION"
+      commands:
+      - echo "DEPLOY TO PRODUCTION"
 
 trigger:
     event:
