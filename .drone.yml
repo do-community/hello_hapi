@@ -7,7 +7,7 @@ steps:
   - name: say_hi
     image: alpine
     commands: 
-      - echo oi
+      - echo "oi"
 trigger:
   event:
     - push
