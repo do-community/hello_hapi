@@ -4,11 +4,6 @@ type: test
 name: test
 
 steps:
-   - name: tests
-     image: node:latest
-     commands: 
-     - npm install
-   
    - name: say_hi
      commands: 
      - echo oi
