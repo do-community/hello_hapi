@@ -9,11 +9,12 @@ Server.route({
     method: 'GET',
     path: '/hello/{user}',
     handler: function (request, reply) {
-
+	console.log("new");
         const result = Hello(decodeURIComponent(request.params.user));
         reply(result);
     }
 });
+
 
 // don't start server if this file was required
 

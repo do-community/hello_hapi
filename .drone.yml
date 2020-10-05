@@ -27,6 +27,8 @@ steps:
 trigger:
   event:
     - promote
+    - push
+    - pull_request
   branches:
     - production
   target:
