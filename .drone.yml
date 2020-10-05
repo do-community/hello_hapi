@@ -15,7 +15,7 @@ steps:
 ---
 kind: pipeline
 type: deployment
-name: deploy
+name: production
 
 steps:
     - name: say_hi
@@ -25,7 +25,7 @@ steps:
 trigger:
     event:
     - promote
-    target:
+    branches:
     - production
 
  
