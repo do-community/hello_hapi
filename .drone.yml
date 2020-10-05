@@ -4,7 +4,7 @@ type: docker
 name: test
 
 steps:
-  - name: say_hi
+  - name: testing
     image: alpine
     commands: 
       - echo "oi"
@@ -19,7 +19,7 @@ type: docker
 name: production
 
 steps:
-  - name: say_hi
+  - name: sending_to_prod
     image: alpine
     commands:
       - echo "DEPLOY TO PRODUCTION"
