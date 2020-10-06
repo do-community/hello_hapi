@@ -53,4 +53,21 @@ trigger:
     - stage
   target:
     - stage
+---
+kind: pipeline
+type: docker
+name: tag-changes
+
+trigger:
+  event:
+    - tag
+  branches:
+    - master
+
+steps:
+  - name: on-tags-changes
+    image: alpine
+    commands:
+      - echo "tags changes"
+
 
